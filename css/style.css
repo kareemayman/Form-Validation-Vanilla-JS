@@ -99,3 +99,11 @@ form > input:hover {
 .pass-error::after {
     content: "Password must be at least 6 characters";
 }
+
+.empty-pass::after {
+    content: "Please confirm your password";
+}
+
+.pass-match::after {
+    content: "Passwords don't match";
+}

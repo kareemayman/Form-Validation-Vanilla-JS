@@ -20,6 +20,11 @@ submit.addEventListener('click', e => {
 
         e.preventDefault()
     }
+
+    if (!confirmPass()) {
+
+        e.preventDefault()
+    }
 })
 
 function checkUserName() {
@@ -58,13 +63,34 @@ function checkPass() {
 
     let value = password.value
 
-    if (value === "" || value < 6) {
+    if (value === "" || value.length < 6) {
 
         password.closest('div').classList.add('pass-error')
         return false
     } else {
 
         password.closest('div').classList.remove('pass-error')
+        return true
+    }
+}
+
+function confirmPass() {
+
+    let value = confirmPassword.value
+
+    if (value === "") {
+
+        confirmPassword.closest('div').classList.remove('pass-match')
+        confirmPassword.closest('div').classList.add('empty-pass')
+        return false
+    } else if ( value !== password.value ) {
+
+        confirmPassword.closest('div').classList.add('pass-match')
+        return false
+    } else {
+
+        confirmPassword.closest('div').classList.remove('empty-pass')
+        confirmPassword.closest('div').classList.remove('pass-match')
         return true
     }
 }
