@@ -36,6 +36,21 @@ form h1 {
     font-weight: 500;
 }
 
+form div {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+form div::after {
+    position: absolute;
+    content: "";
+    bottom: -20px;
+    left: 3px;
+    color: red;
+    font-size: 14px;
+}
+
 form label {
     display: inline-block;
     color: gray;
@@ -44,7 +59,6 @@ form label {
 
 form input {
     width: 100%;
-    margin-bottom: 30px;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid rgb(224, 224, 224);
@@ -57,13 +71,23 @@ form input:focus {
     outline: 1px solid #3498db;
 }
 
-form input:last-of-type {
+form > input {
     margin: 20px 0 0;
     color: white;
     background-color: #3498db;
     cursor: pointer;
 }
 
-form input:last-of-type:hover {
+form > input:hover {
     background-color: #2f89c5;
+}
+
+@media (min-width: 769px) {
+    form {
+        width: 500px;
+    }
+}
+
+.user-error::after {
+    content: "Username must be at least 3 characters";
 }
