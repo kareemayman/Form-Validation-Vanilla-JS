@@ -46,7 +46,7 @@ form div {
 form div::after {
     position: absolute;
     content: "";
-    bottom: -23px;
+    top: 107%;
     left: 3px;
     color: red;
     font-size: 14px;
@@ -84,12 +84,6 @@ form > input:hover {
     background-color: #2f89c5;
 }
 
-@media (min-width: 769px) {
-    form {
-        width: 500px;
-    }
-}
-
 .user-error::after {
     content: "Username must be at least 3 characters";
 }
@@ -116,4 +110,24 @@ form > input:hover {
 
 .red {
     outline: 2px solid red !important;
+}
+
+@media (width < 769px) {
+    div::after {
+        font-size: 12px !important;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    form {
+        width: 80%;
+    }
+}
+
+@media (min-width: 769px) {
+    form {
+        width: 500px;
+    }
 }
