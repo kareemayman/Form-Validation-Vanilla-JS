@@ -91,3 +91,7 @@ form > input:hover {
 .user-error::after {
     content: "Username must be at least 3 characters";
 }
+
+.email-error::after {
+    content: "Email is not valid";
+}
