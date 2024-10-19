@@ -15,6 +15,11 @@ submit.addEventListener('click', e => {
 
         e.preventDefault()
     }
+
+    if (!checkPass()) {
+
+        e.preventDefault()
+    }
 })
 
 function checkUserName() {
@@ -45,6 +50,21 @@ function checkEmail() {
     } else {
 
         email.closest('div').classList.remove('email-error')
+        return true
+    }
+}
+
+function checkPass() {
+
+    let value = password.value
+
+    if (value === "" || value < 6) {
+
+        password.closest('div').classList.add('pass-error')
+        return false
+    } else {
+
+        password.closest('div').classList.remove('pass-error')
         return true
     }
 }

@@ -95,3 +95,7 @@ form > input:hover {
 .email-error::after {
     content: "Email is not valid";
 }
+
+.pass-error::after {
+    content: "Password must be at least 6 characters";
+}
