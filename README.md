@@ -1,2 +1,2 @@
-# Form-Validation (Vanilla JS)
+# Form Validation (Vanilla JS)
 Simple Form Validation Made With HTML, CSS, &amp; Vanilla JavaScript
